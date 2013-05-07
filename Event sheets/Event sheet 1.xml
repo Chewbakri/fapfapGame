@@ -168,6 +168,42 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="950708124018057">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5245037591814747" type="System" />
+                <condition id="-14" name="Compare variable" sid="2165974392755366" type="System">
+                    <param id="0" name="Variable">position</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="5465246662369704" type="c_right_arm">
+                    <param id="0" name="Object">c_body</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="7583831340104122" type="c_left_arm">
+                    <param id="0" name="Object">c_body</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="1499514896748302" type="c_right_arm">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="3869204080968109" type="c_left_arm">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="3715565308306897" type="c_gun_">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="8184387062133626" type="c_head">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
         <comment>If the player falls off the bottom of the layout, restart the level.</comment>
         <event-block sid="3464718064652922">
             <conditions>
@@ -199,42 +235,6 @@
                 <action behavior="Pin" id="0" name="Pin to object" sid="4447408033299179" type="Text">
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="950708124018057">
-            <conditions>
-                <condition disabled="1" id="-1" name="Every tick" sid="5245037591814747" type="System" />
-                <condition disabled="1" id="-14" name="Compare variable" sid="2165974392755366" type="System">
-                    <param id="0" name="Variable">position</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-4" name="Set position to another object" sid="5465246662369704" type="c_right_arm">
-                    <param id="0" name="Object">c_body</param>
-                    <param id="1" name="Image point (optional)">1</param>
-                </action>
-                <action id="-4" name="Set position to another object" sid="7583831340104122" type="c_left_arm">
-                    <param id="0" name="Object">c_body</param>
-                    <param id="1" name="Image point (optional)">1</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="1499514896748302" type="c_right_arm">
-                    <param id="0" name="X">Mouse.X</param>
-                    <param id="1" name="Y">Mouse.Y</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="3869204080968109" type="c_left_arm">
-                    <param id="0" name="X">Mouse.X</param>
-                    <param id="1" name="Y">Mouse.Y</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="3715565308306897" type="c_gun_">
-                    <param id="0" name="X">Mouse.X</param>
-                    <param id="1" name="Y">Mouse.Y</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="8184387062133626" type="c_head">
-                    <param id="0" name="X">Mouse.X</param>
-                    <param id="1" name="Y">Mouse.Y</param>
                 </action>
             </actions>
         </event-block>

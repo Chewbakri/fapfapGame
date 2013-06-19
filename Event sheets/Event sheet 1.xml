@@ -88,44 +88,45 @@
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="9596608839673094" type="System">
                             <param id="0" name="First value">Mouse.X</param>
-                            <param id="1" name="Comparison">4</param>
+                            <param id="1" name="Comparison">3</param>
                             <param id="2" name="Second value">Player.X</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="1855137309169815" type="c_left_arm">
-                            <param id="0" name="Animation">&quot;left_run_mirrored&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="-4" name="Set position to another object" sid="8316862331311672" type="c_left_arm">
-                            <param id="0" name="Object">c_body</param>
-                            <param id="1" name="Image point (optional)">1</param>
-                        </action>
-                        <action id="-25" name="Move to bottom" sid="3942058171629606" type="c_gun_" />
-                        <action behavior="Pin" id="1" name="Unpin" sid="278086973535545" type="c_gun_" />
-                        <action behavior="Pin" id="0" name="Pin to object" sid="5657556226248642" type="c_gun_">
-                            <param id="0" name="Pin to">c_left_arm</param>
-                            <param id="1" name="Mode">1</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="4403838934535434" type="c_right_arm">
-                            <param id="0" name="Animation">&quot;right_mirrored&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="7" name="Set mirrored" sid="5561725745584181" type="c_right_arm">
-                            <param id="0" name="State">0</param>
-                        </action>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="576905035189799" type="c_right_arm">
-                            <param id="0" name="Pin to">Player</param>
-                            <param id="1" name="Mode">1</param>
-                        </action>
                         <action id="-9" name="Set value" sid="4500438044564612" type="System">
                             <param id="0" name="Variable">position</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action disabled="1" id="-25" name="Move to bottom" sid="3942058171629606" type="c_gun_" />
+                        <action behavior="Pin" disabled="1" id="1" name="Unpin" sid="278086973535545" type="c_gun_" />
+                        <action behavior="Pin" disabled="1" id="0" name="Pin to object" sid="5657556226248642" type="c_gun_">
+                            <param id="0" name="Pin to">c_left_arm</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action behavior="Pin" disabled="1" id="0" name="Pin to object" sid="576905035189799" type="c_right_arm">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action disabled="1" id="4" name="Set animation" sid="1855137309169815" type="c_left_arm">
+                            <param id="0" name="Animation">&quot;left_run_mirrored&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action disabled="1" id="-4" name="Set position to another object" sid="8316862331311672" type="c_left_arm">
+                            <param id="0" name="Object">c_body</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action disabled="1" id="4" name="Set animation" sid="4403838934535434" type="c_right_arm">
+                            <param id="0" name="Animation">&quot;right_mirrored&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action disabled="1" id="7" name="Set mirrored" sid="5561725745584181" type="c_right_arm">
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>State Up right down right</comment>
         <event-block any="1" sid="591892236785721">
             <conditions>
                 <condition id="0" name="On key pressed" sid="3811397113765044" type="Keyboard">
@@ -145,6 +146,10 @@
                 <action id="7" name="Set mirrored" sid="6201801293468554" type="c_body">
                     <param id="0" name="State">1</param>
                 </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8606930560421748" type="c_gun_">
+                    <param id="0" name="Pin to">c_right_arm</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="261602466924712">
@@ -156,10 +161,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="8606930560421748" type="c_gun_">
-                            <param id="0" name="Pin to">c_right_arm</param>
-                            <param id="1" name="Mode">1</param>
-                        </action>
                         <action id="-9" name="Set value" sid="4562874413661321" type="System">
                             <param id="0" name="Variable">position</param>
                             <param id="1" name="Value">0</param>
@@ -204,6 +205,25 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="118066626284919">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4293286018865071" type="System">
+                    <param id="0" name="Variable">position</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8663733524143455" type="c_gun_">
+                    <param id="0" name="Pin to">c_left_arm</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="2267806657722844" type="c_left_arm">
+                    <param id="0" name="Animation">&quot;left_run_mirrored&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
         <comment>If the player falls off the bottom of the layout, restart the level.</comment>
         <event-block sid="3464718064652922">
             <conditions>
@@ -235,6 +255,20 @@
                 <action behavior="Pin" id="0" name="Pin to object" sid="4447408033299179" type="Text">
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8420374729162615" type="fov_1">
+                    <param id="0" name="Pin to">c_head</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="4785049233701377" type="fov_1">
+                    <param id="0" name="Layer">&quot;Background_0&quot;</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="7285060083875672" type="Sprite">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="4227096598465996" type="Sprite">
+                    <param id="0" name="Layer">&quot;Background_0&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -297,6 +331,76 @@
             <actions>
                 <action id="0" name="Set text" sid="2682406406757929" type="Text">
                     <param id="0" name="Text">fps</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8268398293436367">
+            <conditions>
+                <condition id="-21" name="Is between values" sid="9200704474765675" type="System">
+                    <param id="0" name="Value">Mouse.X</param>
+                    <param id="1" name="Lower bound">sin(-1)</param>
+                    <param id="2" name="Upper bound">sin(1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="9011631995726338" type="c_left_arm">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="5454319870593305" type="c_right_arm">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="2313988765290898" type="c_body">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="297587353586528" type="c_gun_">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8810802916771194">
+            <conditions>
+                <condition id="-21" name="Is between values" sid="8386868084508947" type="System">
+                    <param id="0" name="Value">Mouse.X</param>
+                    <param id="1" name="Lower bound">sin(1)</param>
+                    <param id="2" name="Upper bound">sin(-1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="1820538440831763" type="c_left_arm">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="8250874386917771" type="c_right_arm">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="6452777222280535" type="c_body">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="7178060475017316" type="c_gun_">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2385343827946182">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="9175687148727439" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="3594217097663001" type="fov_1">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8986505658484348">
+            <conditions>
+                <condition id="3" name="On button released" sid="5796694737125325" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="2849215022804659" type="fov_1">
+                    <param id="0" name="Frame number">0</param>
                 </action>
             </actions>
         </event-block>

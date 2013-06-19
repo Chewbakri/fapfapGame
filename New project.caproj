@@ -4,19 +4,22 @@
     <description></description>
     <version>1.0</version>
     <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
     <unique-id>3phjf8c2bcezm</unique-id>
-    <saved-with-version>12802</saved-with-version>
+    <saved-with-version>13400</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -26,15 +29,15 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>640</width>
-        <height>480</height>
+        <width>1280</width>
+        <height>800</height>
     </window-size>
     <pixel-rounding>1</pixel-rounding>
     <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Crop</prop>
+        <prop name="Fullscreen in browser">Off</prop>
         <prop name="Hide address bar">No</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Pause on unfocus">Yes</prop>
@@ -626,6 +629,67 @@
         <object-type name="Mouse" sid="9097549281887172">
             <plugin id="Mouse" />
         </object-type>
+        <object-type name="fov_1" sid="3281754633633831">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="2901126484470312">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3100214526642795" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.264631" y="0.312312" />
+                            <point x="0.5" y="0.211712" />
+                            <point x="0.687023" y="0.369369" />
+                            <point x="0.688295" y="0.632132" />
+                            <point x="0.5" y="0.8003" />
+                            <point x="0.254453" y="0.6997" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.332061" y="0.391892" />
+                            <point x="0.70229" y="0.351351" />
+                            <point x="0.858779" y="0.5" />
+                            <point x="0.711196" y="0.659159" />
+                            <point x="0.319338" y="0.623123" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="1956692206878989">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite" sid="252620921685038">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="6110775939128005">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1262217424093429" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.212121" y="0.212121" />
+                            <point x="0.5" y="0.0934343" />
+                            <point x="0.787879" y="0.212121" />
+                            <point x="0.906566" y="0.5" />
+                            <point x="0.787879" y="0.787879" />
+                            <point x="0.5" y="0.906566" />
+                            <point x="0.212121" y="0.787879" />
+                            <point x="0.0934343" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player_entities" plugin-id="Sprite" sid="7686624902757869">
@@ -653,5 +717,13 @@
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />
-    <files-folder expanded="1" />
+    <files-folder expanded="1">
+        <file-folder expanded="0" name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
 </c2project>

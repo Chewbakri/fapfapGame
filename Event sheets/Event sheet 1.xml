@@ -90,6 +90,51 @@
                     <param id="0" name="State">0</param>
                 </action>
             </actions>
+<<<<<<< HEAD
+=======
+            <sub-events>
+                <event-block sid="1931431356007112">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9596608839673094" type="System">
+                            <param id="0" name="First value">Mouse.X</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">Player.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4500438044564612" type="System">
+                            <param id="0" name="Variable">position</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="3942058171629606" type="c_gun_" />
+                        <action behavior="Pin" id="1" name="Unpin" sid="278086973535545" type="c_gun_" />
+                        <action behavior="Pin" id="0" name="Pin to object" sid="5657556226248642" type="c_gun_">
+                            <param id="0" name="Pin to">c_left_arm</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="576905035189799" type="c_right_arm">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="1855137309169815" type="c_left_arm">
+                            <param id="0" name="Animation">&quot;left_run_mirrored&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="8316862331311672" type="c_left_arm">
+                            <param id="0" name="Object">c_body</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="4403838934535434" type="c_right_arm">
+                            <param id="0" name="Animation">&quot;right_mirrored&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="5561725745584181" type="c_right_arm">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+>>>>>>> 1694e6f7792415427b6545f635e304f928ed8504
         </event-block>
         <comment>State Up right down right</comment>
         <event-block any="1" sid="591892236785721">
@@ -111,6 +156,7 @@
                 <action id="7" name="Set mirrored" sid="6201801293468554" type="c_body">
                     <param id="0" name="State">1</param>
                 </action>
+<<<<<<< HEAD
                 <action id="7" name="Set mirrored" sid="190558018104395" type="c_left_arm">
                     <param id="0" name="State">1</param>
                 </action>
@@ -171,6 +217,30 @@
                     <param id="0" name="State">1</param>
                 </action>
             </actions>
+=======
+                <action behavior="Pin" id="0" name="Pin to object" sid="8606930560421748" type="c_gun_">
+                    <param id="0" name="Pin to">c_right_arm</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="261602466924712">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6050628675887835" type="System">
+                            <param id="0" name="First value">Mouse.X</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">Player.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4562874413661321" type="System">
+                            <param id="0" name="Variable">position</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+>>>>>>> 1694e6f7792415427b6545f635e304f928ed8504
         </event-block>
         <event-block sid="950708124018057">
             <conditions>
@@ -185,6 +255,25 @@
                 <action id="-22" name="Set angle toward position" sid="8184387062133626" type="c_head">
                     <param id="0" name="X">Mouse.X</param>
                     <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="118066626284919">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4293286018865071" type="System">
+                    <param id="0" name="Variable">position</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8663733524143455" type="c_gun_">
+                    <param id="0" name="Pin to">c_left_arm</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="2267806657722844" type="c_left_arm">
+                    <param id="0" name="Animation">&quot;left_run_mirrored&quot;</param>
+                    <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>
@@ -356,6 +445,7 @@
                 </action>
             </actions>
         </event-block>
+<<<<<<< HEAD
         <event-block sid="2385343827946182">
             <conditions>
                 <condition id="2" name="Mouse button is down" sid="9175687148727439" type="Mouse">
@@ -521,6 +611,52 @@
                     <param id="2" name="Image point">1</param>
                 </action>
                 <action id="-9" name="Destroy" sid="2185107142208368" type="flash" />
+=======
+        <event-block sid="8268398293436367">
+            <conditions>
+                <condition id="-21" name="Is between values" sid="9200704474765675" type="System">
+                    <param id="0" name="Value">Mouse.X</param>
+                    <param id="1" name="Lower bound">sin(-1)</param>
+                    <param id="2" name="Upper bound">sin(1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="9011631995726338" type="c_left_arm">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="5454319870593305" type="c_right_arm">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="2313988765290898" type="c_body">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="297587353586528" type="c_gun_">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8810802916771194">
+            <conditions>
+                <condition id="-21" name="Is between values" sid="8386868084508947" type="System">
+                    <param id="0" name="Value">Mouse.X</param>
+                    <param id="1" name="Lower bound">sin(1)</param>
+                    <param id="2" name="Upper bound">sin(-1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="1820538440831763" type="c_left_arm">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="8250874386917771" type="c_right_arm">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="6452777222280535" type="c_body">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="7178060475017316" type="c_gun_">
+                    <param id="0" name="State">0</param>
+                </action>
+>>>>>>> 1694e6f7792415427b6545f635e304f928ed8504
             </actions>
         </event-block>
     </events>

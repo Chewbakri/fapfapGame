@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable comment="Player is actually focused to aim? (True = 1)" constant="0" name="aiming" sid="1860830502281793" static="0" type="number">0</variable>
         <variable comment="Set to 0 if the legs and torso are in the same direction, 1 if not" constant="0" name="position" sid="1664180554152655" static="0" type="number">0</variable>
         <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
         <event-block sid="4329145015806657">
@@ -82,49 +83,13 @@
                 <action id="7" name="Set mirrored" sid="9536516199835007" type="c_body">
                     <param id="0" name="State">0</param>
                 </action>
+                <action id="7" name="Set mirrored" sid="9769790452950666" type="c_left_arm">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="8539865000154133" type="c_right_arm">
+                    <param id="0" name="State">0</param>
+                </action>
             </actions>
-            <sub-events>
-                <event-block sid="1931431356007112">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="9596608839673094" type="System">
-                            <param id="0" name="First value">Mouse.X</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Second value">Player.X</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="4500438044564612" type="System">
-                            <param id="0" name="Variable">position</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action disabled="1" id="-25" name="Move to bottom" sid="3942058171629606" type="c_gun_" />
-                        <action behavior="Pin" disabled="1" id="1" name="Unpin" sid="278086973535545" type="c_gun_" />
-                        <action behavior="Pin" disabled="1" id="0" name="Pin to object" sid="5657556226248642" type="c_gun_">
-                            <param id="0" name="Pin to">c_left_arm</param>
-                            <param id="1" name="Mode">1</param>
-                        </action>
-                        <action behavior="Pin" disabled="1" id="0" name="Pin to object" sid="576905035189799" type="c_right_arm">
-                            <param id="0" name="Pin to">Player</param>
-                            <param id="1" name="Mode">1</param>
-                        </action>
-                        <action disabled="1" id="4" name="Set animation" sid="1855137309169815" type="c_left_arm">
-                            <param id="0" name="Animation">&quot;left_run_mirrored&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action disabled="1" id="-4" name="Set position to another object" sid="8316862331311672" type="c_left_arm">
-                            <param id="0" name="Object">c_body</param>
-                            <param id="1" name="Image point (optional)">1</param>
-                        </action>
-                        <action disabled="1" id="4" name="Set animation" sid="4403838934535434" type="c_right_arm">
-                            <param id="0" name="Animation">&quot;right_mirrored&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action disabled="1" id="7" name="Set mirrored" sid="5561725745584181" type="c_right_arm">
-                            <param id="0" name="State">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
         <comment>State Up right down right</comment>
         <event-block any="1" sid="591892236785721">
@@ -146,28 +111,66 @@
                 <action id="7" name="Set mirrored" sid="6201801293468554" type="c_body">
                     <param id="0" name="State">1</param>
                 </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="8606930560421748" type="c_gun_">
-                    <param id="0" name="Pin to">c_right_arm</param>
-                    <param id="1" name="Mode">1</param>
+                <action id="7" name="Set mirrored" sid="190558018104395" type="c_left_arm">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="8671747939588766" type="c_right_arm">
+                    <param id="0" name="State">1</param>
                 </action>
             </actions>
-            <sub-events>
-                <event-block sid="261602466924712">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="6050628675887835" type="System">
-                            <param id="0" name="First value">Mouse.X</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Second value">Player.X</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="4562874413661321" type="System">
-                            <param id="0" name="Variable">position</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
+        </event-block>
+        <event-block sid="1931431356007112">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="9596608839673094" type="System">
+                    <param id="0" name="First value">Mouse.X</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">Player.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Set flipped" sid="2500803926229424" type="c_head">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="8" name="Set flipped" sid="1652953814040303" type="c_right_arm_aiming">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="8" name="Set flipped" sid="2788501394881613" type="c_left_arm_aiming">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="8" name="Set flipped" sid="105988801564602" type="c_gun_">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="261602466924712">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="6050628675887835" type="System">
+                    <param id="0" name="First value">Mouse.X</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">Player.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4562874413661321" type="System">
+                    <param id="0" name="Variable">position</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="7381934014062231" type="c_head">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="8" name="Set flipped" sid="5927383508222428" type="c_head">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="8" name="Set flipped" sid="3739586485311828" type="c_right_arm_aiming">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="8" name="Set flipped" sid="1736962652013043" type="c_left_arm_aiming">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="8" name="Set flipped" sid="3570935406721394" type="c_gun_">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="950708124018057">
             <conditions>
@@ -179,48 +182,9 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-4" name="Set position to another object" sid="5465246662369704" type="c_right_arm">
-                    <param id="0" name="Object">c_body</param>
-                    <param id="1" name="Image point (optional)">1</param>
-                </action>
-                <action id="-4" name="Set position to another object" sid="7583831340104122" type="c_left_arm">
-                    <param id="0" name="Object">c_body</param>
-                    <param id="1" name="Image point (optional)">1</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="1499514896748302" type="c_right_arm">
-                    <param id="0" name="X">Mouse.X</param>
-                    <param id="1" name="Y">Mouse.Y</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="3869204080968109" type="c_left_arm">
-                    <param id="0" name="X">Mouse.X</param>
-                    <param id="1" name="Y">Mouse.Y</param>
-                </action>
-                <action id="-22" name="Set angle toward position" sid="3715565308306897" type="c_gun_">
-                    <param id="0" name="X">Mouse.X</param>
-                    <param id="1" name="Y">Mouse.Y</param>
-                </action>
                 <action id="-22" name="Set angle toward position" sid="8184387062133626" type="c_head">
                     <param id="0" name="X">Mouse.X</param>
                     <param id="1" name="Y">Mouse.Y</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="118066626284919">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="4293286018865071" type="System">
-                    <param id="0" name="Variable">position</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Pin" id="0" name="Pin to object" sid="8663733524143455" type="c_gun_">
-                    <param id="0" name="Pin to">c_left_arm</param>
-                    <param id="1" name="Mode">1</param>
-                </action>
-                <action id="4" name="Set animation" sid="2267806657722844" type="c_left_arm">
-                    <param id="0" name="Animation">&quot;left_run_mirrored&quot;</param>
-                    <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>
@@ -245,10 +209,6 @@
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">1</param>
                 </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="2452547954832879" type="c_gun_">
-                    <param id="0" name="Pin to">c_right_arm</param>
-                    <param id="1" name="Mode">1</param>
-                </action>
                 <action id="-15" name="Set visible" sid="7761720486111355" type="Player">
                     <param id="0" name="Visibility">0</param>
                 </action>
@@ -270,11 +230,37 @@
                 <action id="-26" name="Move to layer" sid="4227096598465996" type="Sprite">
                     <param id="0" name="Layer">&quot;Background_0&quot;</param>
                 </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="3872073536718503" type="c_left_arm">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="2219269890469052" type="c_right_arm">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8663733524143455" type="c_gun_">
+                    <param id="0" name="Pin to">c_right_arm_aiming</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="654766330010639" type="c_gun_">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="785452191255634" type="c_left_arm_aiming">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2597353089069833" type="c_right_arm_aiming">
+                    <param id="0" name="Visibility">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="4318600309036469">
             <conditions>
                 <condition behavior="Platform" id="0" name="Is moving" sid="4157113474874958" type="Player" />
+                <condition id="-14" name="Compare variable" sid="3092786320731207" type="System">
+                    <param id="0" name="Variable">aiming</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="4" name="Set animation" sid="2385996002305567" type="c_legs">
@@ -287,6 +273,34 @@
                 </action>
                 <action id="4" name="Set animation" sid="9435863917954798" type="c_head">
                     <param id="0" name="Animation">&quot;Run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="3343123915362163" type="c_right_arm">
+                    <param id="0" name="Animation">&quot;right_anim_run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="8540668392897694" type="c_left_arm">
+                    <param id="0" name="Animation">&quot;left_anim_run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6868485744725609">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="8878921881809467" type="Player" />
+                <condition id="-14" name="Compare variable" sid="7143404517269743" type="System">
+                    <param id="0" name="Variable">aiming</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="438867893975989" type="c_legs">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="2784727193809708" type="c_head">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
             </actions>
@@ -309,9 +323,17 @@
                     <param id="0" name="Animation">&quot;Idle&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
+                <action id="4" name="Set animation" sid="7635876072239121" type="c_right_arm">
+                    <param id="0" name="Animation">&quot;right_anim_idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="2335126996604329" type="c_left_arm">
+                    <param id="0" name="Animation">&quot;left_anim_idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
             </actions>
         </event-block>
-        <event-block sid="4587520851919944">
+        <event-block disabled="1" sid="4587520851919944">
             <conditions>
                 <condition id="-13" name="Is between angles" sid="9662760534408473" type="c_head">
                     <param id="0" name="First angle">270</param>
@@ -334,52 +356,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="8268398293436367">
-            <conditions>
-                <condition id="-21" name="Is between values" sid="9200704474765675" type="System">
-                    <param id="0" name="Value">Mouse.X</param>
-                    <param id="1" name="Lower bound">sin(-1)</param>
-                    <param id="2" name="Upper bound">sin(1)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="7" name="Set mirrored" sid="9011631995726338" type="c_left_arm">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="5454319870593305" type="c_right_arm">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="2313988765290898" type="c_body">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="297587353586528" type="c_gun_">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="8810802916771194">
-            <conditions>
-                <condition id="-21" name="Is between values" sid="8386868084508947" type="System">
-                    <param id="0" name="Value">Mouse.X</param>
-                    <param id="1" name="Lower bound">sin(1)</param>
-                    <param id="2" name="Upper bound">sin(-1)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="7" name="Set mirrored" sid="1820538440831763" type="c_left_arm">
-                    <param id="0" name="State">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="8250874386917771" type="c_right_arm">
-                    <param id="0" name="State">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="6452777222280535" type="c_body">
-                    <param id="0" name="State">0</param>
-                </action>
-                <action id="7" name="Set mirrored" sid="7178060475017316" type="c_gun_">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="2385343827946182">
             <conditions>
                 <condition id="2" name="Mouse button is down" sid="9175687148727439" type="Mouse">
@@ -389,6 +365,65 @@
             <actions>
                 <action id="5" name="Set frame" sid="3594217097663001" type="fov_1">
                     <param id="0" name="Frame number">1</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="7391237976378268" type="Player">
+                    <param id="0" name="Max Speed">160</param>
+                </action>
+                <action behavior="Platform" id="4" name="Set jump strength" sid="6894054507056896" type="Player">
+                    <param id="0" name="Jump strength">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="4266594430352649" type="c_left_arm_aiming">
+                    <param id="0" name="Animation">&quot;left_idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="4823447101037006" type="c_right_arm_aiming">
+                    <param id="0" name="Animation">&quot;right_idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="5465246662369704" type="c_right_arm_aiming">
+                    <param id="0" name="Object">c_body</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="7583831340104122" type="c_left_arm_aiming">
+                    <param id="0" name="Object">c_body</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action id="-18" name="Rotate clockwise" sid="3034085683038411" type="c_right_arm_aiming">
+                    <param id="0" name="Degrees">0</param>
+                </action>
+                <action id="-18" name="Rotate clockwise" sid="485057887156772" type="c_left_arm_aiming">
+                    <param id="0" name="Degrees">0</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="1499514896748302" type="c_right_arm_aiming">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="3869204080968109" type="c_left_arm_aiming">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="3715565308306897" type="c_gun_">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3250221985088844" type="c_gun_">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2681208640607402" type="c_left_arm">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2819063708192127" type="c_right_arm">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="542787632904985" type="c_left_arm_aiming">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6890227936650409" type="c_right_arm_aiming">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="5274429006217981" type="System">
+                    <param id="0" name="Variable">aiming</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
@@ -402,6 +437,90 @@
                 <action id="5" name="Set frame" sid="2849215022804659" type="fov_1">
                     <param id="0" name="Frame number">0</param>
                 </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="9188794303910769" type="Player">
+                    <param id="0" name="Max Speed">250</param>
+                </action>
+                <action behavior="Platform" id="4" name="Set jump strength" sid="8227229145483905" type="Player">
+                    <param id="0" name="Jump strength">500</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="4580079279079931" type="c_left_arm">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="3824848841142855" type="c_right_arm">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="5916348895573373" type="c_right_arm">
+                    <param id="0" name="Animation">&quot;right_anim_idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="559183526162524" type="c_left_arm">
+                    <param id="0" name="Animation">&quot;left_anim_idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="6446199357870504" type="c_right_arm">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="4947457403487613" type="c_left_arm">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2909390077505561" type="c_gun_">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5858666477867298" type="c_left_arm">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7911459470587335" type="c_right_arm">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1584249799264563" type="c_left_arm_aiming">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8485751021954226" type="c_right_arm_aiming">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2504265686693108" type="System">
+                    <param id="0" name="Variable">aiming</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6196207671515818">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="7598718182032767" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3417931067296914" type="System">
+                    <param id="0" name="Variable">aiming</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="6667458116584927" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="5087390313374534" type="c_gun_">
+                    <param id="0" name="Object">bullet</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="790128684852674" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="4" name="Set animation" sid="9341067174388245" type="c_gun_">
+                    <param id="0" name="Animation">&quot;Fire&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="7957331389068474" type="c_gun_">
+                    <param id="0" name="Object">flash</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="2185107142208368" type="flash" />
             </actions>
         </event-block>
     </events>
